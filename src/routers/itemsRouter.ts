@@ -14,8 +14,6 @@ itemsRouter.get("/", async (req: Request, res: Response) => {
   }
 });
 
-// GET items/:id
-
 itemsRouter.get("/:id", async (req: Request, res: Response) => {
   const id: number = parseInt(req.params.id, 10);
 
@@ -32,8 +30,6 @@ itemsRouter.get("/:id", async (req: Request, res: Response) => {
   }
 });
 
-// POST items
-
 itemsRouter.post("/", async (req: Request, res: Response) => {
   try {
     const item: IBaseItem = req.body;
@@ -45,8 +41,6 @@ itemsRouter.post("/", async (req: Request, res: Response) => {
     res.status(500).send(e.message);
   }
 });
-
-// PUT items/:id
 
 itemsRouter.put("/:id", async (req: Request, res: Response) => {
   const id: number = parseInt(req.params.id, 10);
@@ -68,8 +62,6 @@ itemsRouter.put("/:id", async (req: Request, res: Response) => {
     res.status(500).send(e.message);
   }
 });
-
-// DELETE items/:id
 
 itemsRouter.delete("/:id", async (req: Request, res: Response) => {
   try {
